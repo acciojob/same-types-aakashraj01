@@ -1,10 +1,12 @@
 function isSameType(value1, value2) {
-if(typeof value1 == typeof value2)
-return true;
-else if(isNaN(value1) && isNaN(value2))
-return true;
-else
-return false;
+    if (typeof value1 === typeof value2) {
+        // If the types are the same, check if they are NaN
+        if (typeof value1 === 'number' && isNaN(value1) && isNaN(value2)) {
+            return true;
+        }
+        return true;
+    }
+    return false;
 }
 
 // do not change the code below.
