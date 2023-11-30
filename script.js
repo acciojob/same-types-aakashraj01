@@ -1,7 +1,7 @@
 function isSameType(value1, value2) {
 if(typeof value1 == typeof value2)
 return true;
-else if(Number.isNaN(Number(value1)) && Number.isNaN(Number(value2)))
+else if(isNaN(value1) && isNaN(value2))
 return true;
 else
 return false;
