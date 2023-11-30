@@ -1,14 +1,10 @@
 function isSameType(value1, value2) {
-    if (typeof value1 === typeof value2) {
-        // If the types are the same, check if they are NaN
-        if (typeof value1 === 'number' && isNaN(value1) && isNaN(value2)) {
-            return true;
-        }
+    if (Number.isNaN(Number(value1)) && Number.isNaN(Number(value2))) {
         return true;
+    } else {
+        return Object.prototype.toString.call(value1) === Object.prototype.toString.call(value2);
     }
-    return false;
 }
-
 // do not change the code below.
 let value1 = prompt("Enter Start of the Range.");
 let value2 = prompt("Enter End Of the Range.");
